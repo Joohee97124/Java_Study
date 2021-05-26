@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test020.html</title>
+<!-- 
+<script type="text/javascript">
+
+	function Performed()
+	{
+		// alert("함수 호출 화긴ㅎ");
+		
+		var arr = [];
+		var n2 = 0;
+		
+		for(var i=0; i<arr.length; i++,n2+3)
+			{
+				arr[i] = ( documentElementById("num123").value ).substring(n2,(n2+1));
+			}
+		
+		alert(arr[0]);
+		
+		for (var k=0; k < arr.length; k++)
+		{
+			if ( parseInt(arr[k] % 2) == 0)
+			{
+				document.getElementById("result246").value += arr[k] + " ,";
+			}
+		}
+		
+		
+	}
+
+</script>
+ -->
+ 
+<style type="text/css">
+
+	* {color: #223322;}
+ 	input {font-family:나눔고딕코딩; font-weight:bold;}
+	input.txtArray {width:100px;}
+	input.btn {width:90px; font-weight:bold; font-family:맑은 고딕;}
+	input:focus {background-color: #eeeeff;}
+	td {text-align: center;}
+	input.txtScore {txt-align: right;}
+	textarea {font-family: 나눔고딕코딩; font-weight: bold;}
+
+</style>
+ 
+
+<script type="text/javascript">
+	// 자바스크립트 배열 구성
+	var arr = [4, 7, 9, 1, 3, 2, 5, 6, 8];
+	
+	function init()
+	{
+		var str="";
+		
+		for (var n=0; n<arr.length; n++)
+		{
+			str += arr[n] + " ";
+		}
+		
+		document.getElementById("array1").value = str;
+	}
+	
+	function myArray()
+	{
+		// 테스트
+		// alert("함수 호출 화긴 ㅎ");
+		
+		var str = "";
+		
+		for (var n=0; n<arr.length; n++)	// 0 1 2 3 4 5 6 7 8
+		{
+			if (arr[n]%2 == 0 )
+				str += arr[n]+ " ";
+		}
+		
+		document.getElementById("array2").value = str;
+	}
+	
+</script>
+ 
+</head>
+<body onload="init()">
+
+<!-- 
+	지정된 정수가 들어있는 1차원 배열의 숫자 데이터들 중에서
+	짝수만 골라서 출력하는 페이지를 구성한다
+	
+	HTML, CSS, Javascript 활용한다
+	
+	또한, 자바스크립트 배열을 활용한다
+	
+	※ 지정된 정수 배열 → 4, 7, 9, 1, 3, 2, 5, 6, 8
+	
+	페이지 레이아웃
+	--------------------------------------------------------------
+	초기 배열 상태 [4, 7, 9, 1, 3, 2, 5, 6, 8] ← 지정된 배열 출력
+	
+	< 결 과 >
+	
+	짝수만 출력 [ ]
+	
+	--------------------------------------------------------------
+	
+-->
+
+<!-- 
+<div>
+	<form>
+		
+		<div>
+			초기 배열 상태 <input type="text" class="number" id="num123">
+		</div>
+		<br>
+		
+		<div>
+			<input type="button" class="btn" value="결과" 
+			style="width: 150px;" onclick="Performed()">
+		</div>
+		<br>
+		
+		<div>
+			짝수만 출력 <input type="text" class="result" id="result246">
+		</div>
+	
+	</form>
+</div>
+ -->
+ 
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<from>
+		초기 배열 상태
+		<input type="text" id="array1" class="txtArray"><br><Br>
+		
+		<input type="button" value="결과" class="btn"
+		style="width:300px;" onclick="myArray()"><br><br>
+		
+		짝수만 출력
+		<input type="text" id="array2" class="txtArray" disabled="disabled"><br><Br>
+</div>
+ 
+</body>
+</html>

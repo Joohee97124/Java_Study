@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+
+<style type="text/css">
+	* {color: #223322;}
+ 	input {font-family:나눔고딕코딩; font-weight:bold;}
+	input.txtArray{width:100px;}
+	input.btn {width:90px; font-weight:bold; font-family:맑은 고딕;}
+	input:focus {background-color: #eeeeff;}
+	td {text-align: center;}
+	
+</style>
+<!-- 
+<script type="text/javascript">
+
+	function insertInfo()
+	{
+		// alert("hi");
+		
+		//var n = 1;
+		var count = 0;
+		
+		do
+		{
+			var str = prompt("이름 전화번호 입력(count)" );
+			
+			if (str == ".")
+				break;
+			
+			count++;
+	
+		} while (true);
+		
+		document.getElementById("inform").value = str;
+		document.getElementById("count").value = count;
+	
+		
+		
+	}
+
+</script>
+ -->
+ 
+<script type="text/javascript">
+
+	function addMember()
+	{
+		//alert("hi");
+		
+		var str = "";
+		var arr = new Array();
+		var n = 0;
+		
+		do
+		{
+			str = prompt("이름 전화번호 (" + (n+1) + ")" );
+			
+			// 테스트
+			// alert(str);
+			
+			if (str==null || str=="." || str== " ")
+				break;
+			
+			arr[n] = str;
+			n++;
+			
+		} while (true);
+		
+		document.getElementById("txtCount").value = arr.length;
+		
+		document.getElementById("txtResult").value = " 이름  전화번호\n";
+		
+		for (var n=0; n<arr.length; n++)
+			document.getElementById("txtResult").value += arr[n] + "\n";
+		
+	}
+
+</script> 
+ 
+ 
+</head>
+<body>
+
+<!--  
+	여러 명의 이름과 전화번호를 입력받고
+	그 내용을 전체 출력하는 페이지를 구성한다
+	
+	HTML, CSS, Javascript 활용한다
+	
+	prompt() 활용한다
+	
+	페이지 레이아웃
+	------------------------------------------------------
+	 < 회원 정보 입력 > ------------------------------------------- 버튼 클릭 → 이름 전화번호 입력(1) : 한혜림 010-1111-1111
+	 																			 이름 전화번호 입력(2) : 장서현 010-2222-2222
+	 																			 이름 전화번호 입력(3) : 입력없음 / . / 공백				
+	 
+	 전체 회원 수 : [		]명
+	 --------------------------
+	  	이름		전화번호
+	 --------------------------
+	 		    :
+	 		    
+	 		    
+	------------------------------------------------------
+-->
+
+<!-- 
+<div>
+	<form>
+		<input type="button" class="btn" id="insert" value="회원정보입력"
+		style="width:100%;" onclick="insertInfo()";><br><br>
+		
+		전체 회원 수 : <input type="text" class="txt" id="count" disabled="disabled"> 명<br>
+		--------------------------------------------------------------<br>
+					이름						전화번호			  <br>
+		--------------------------------------------------------------<br>
+		<textarea rows="10" cols="50" class="txt" id="inform" disabled="disabled">
+		</textarea>
+	</form>
+</div>
+ -->
+
+<div>
+	<form>
+		<input type="button" value="회원 정보 입력" class="btn"
+		style="width: 200px;" onclick="addMember()">
+		<br><br>
+		
+		전체 회원 수
+		<input type="text" id="txtCount" class="txt" style="width: 20px;" readonly="readonly">
+		<br><br>
+		
+		<textarea rows="10" cols="50" id="txtResult" readonly="readonly">
+		</textarea>
+	</form>
+</div>
+ 
+ 
+</body>
+</html>

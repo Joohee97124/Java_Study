@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+
+<!-- <style type="text/css"></style>
+
+<script type="text/javascript">
+
+	function CountCal()
+	{
+		// alert("성공");
+		
+		var num1 = document.getElementById("count").value;
+		var n1 = parseInt(num1);
+		
+		var n2 = 0;
+		var n3 = 0;
+		
+		if (n1 >= 100)
+		{
+			// alert(n1);
+			for (n2 = 0; n1 ; n2++)
+			{
+				n3 += n2;
+				
+				if (parseInt(n2/10) =0 )
+				{
+					System.out.printf( "1 ~ %d : %d\n ", n2, n3);
+				}
+				
+				if (n2 == n1)
+				{
+					System.out.printf("1 ~ %d : %d\n ", n2, n3);
+				}
+			}
+			
+		}
+		else
+			alert("100이상의 숫자를 입력하세요");
+			
+	}
+
+</script> -->
+
+<style type="text/css">
+
+	* {color: #223322;}
+ 	input {font-family:나눔고딕코딩; font-weight:bold;}
+	input.txt {width:100px;}
+	input.btn {width:90px; font-weight:bold; font-family:맑은 고딕;}
+	input:focus {background-color: #eeeeff;}
+	td {text-align: center;}
+	input.txtScore {txt-align: right;}
+	textarea {font-family: 나눔고딕코딩; font-weight: bold;}
+
+</style>
+
+
+<script>
+	
+	function actionPerformed()
+	{
+		// alert("함수 호출 화긴ㅎ");
+		
+		// 함수 호출 시 가장 먼저 : 이전 처리 내용 제거~!!!
+		document.getElementById("result").value = "";
+		
+		
+		var nNum = parseInt( document.getElementById("num").value );
+		// var nNum = Number( document.getElementById("num").value );
+		
+		var nSum = 0;
+		
+		if (nNum < 100)
+		{
+			alert("입력값은 100 이상만 가능합니다");
+			return;	// 함수 종료
+		}
+		
+		for (var n=1; n<= nNum ;n++)	// 1부터 입력값(nNum)까지 1씩 증가하며 반복
+		{
+			nSum += n;
+			
+			if (n%10 == 0)	// n이 10의 배수일때...
+				// document.getElementById("result").value += "1 ~ " + n + ":" + nSum + "<br>" ;	// 개행 구분
+				document.getElementById("result").value += "1 ~ " + n + ":" + nSum + "\n" ;		// 개행 구분
+				// 10이찍히고 -> 20이 덮어쓰여져서 찍히고 -> ... 결국 ↓ 맨 밑에 있는 애(최종)만 찍힘
+				// Textarea에서는 <br>이 공백이 아니다 !
+				// \n이다
+			
+		}
+		
+		document.getElementById("result").value += ">> 1~" + nNum + ":" + nSum + "\n";
+	}
+
+</script>
+
+</head>
+<body>
+
+<!-- 
+	1부터 n 까지의 합을 계산하되 n 은 100 이상만 허용하고
+	출력 시 10의 배수가 될 때마다 중간 합을 출력할 수 있는
+	페이지를 구성한다
+	반복문을 활용할 수 있도록 한다
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	-------------------------------------------------------
+	정수 입력(100 이상)		[    100     ] → 조건 유효성
+	
+		< 결과 >      < 취소 >
+	---------------------------------------
+	 1 ~ 10  : 55
+	 1 ~ 20  : 210
+	 1 ~ 20  : xx
+	 	:
+	 1 ~ 100 : 5050
+	---------------------------------------
+	
+	-------------------------------------------------------
+	
+ -->
+ 
+ 
+ <div>
+ 	<h1>자바스크립트 활용</h1>
+ </div> 
+<!-- 	
+<div>
+	<form>
+		정수 입력(100 이상) <input type="text" class="cal" id="count">
+		<br><br>
+		
+		<input type="button" class="btn" value="결과" onclick="CountCal()">
+		<input type="reset" class="btn" value="취소">
+		<br><br>
+		
+		<textarea rows="10" cols="50" class="ta" id="textArea">
+		</textarea>
+	 
+	</form>
+</div>
+ -->
+ 
+ <div>
+ 	<form>
+ 		<div>
+ 			정수 입력 (100 이상)
+ 			<input type="text" id="num" class="txt">
+ 		</div>
+ 		<br>	
+ 		
+ 		<div>
+ 			<input type="button" value="결과" class="btn"
+ 			style="width: 150px;" onclick="actionPerformed()">
+ 			<input type="reset" value="취소" class="btn"
+ 			style="width: 150px;" >
+ 		</div>
+ 		<br>
+ 		
+ 		<div>
+ 			<textarea rows="10" cols="40" id="result" readonly="readonly"></textarea>
+ 			<!-- disabled = readonly -->
+ 		</div>
+ 		
+ 		
+ 		
+ 	</form>
+ </div>
+ 
+ 
+</body>
+</html>
