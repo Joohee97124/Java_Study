@@ -405,7 +405,7 @@ public class BoardDAO
       
       try
       {
-         sql = "SELECT NVL(MIN(NUM), -1) AS NEXTNUM "
+         sql = "SELECT NVL(MIN(NUM), -1) AS BEFORENUM "
             + "FROM TBL_BOARD WHERE NUM > ?";
 
          pstmt = conn.prepareStatement(sql);
@@ -439,7 +439,7 @@ public class BoardDAO
       
       try
       {
-         sql = "SELECT NVL(MAX(NUM), -1) AS BEFORENUM "
+         sql = "SELECT NVL(MAX(NUM), -1) AS NEXTNUM "
                + "FROM TBL_BOARD WHERE NUM < ?";
          pstmt = conn.prepareStatement(sql);
          pstmt.setInt(1, num);
