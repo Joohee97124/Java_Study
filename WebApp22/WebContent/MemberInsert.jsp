@@ -1,6 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.test.core.MemberDTO"%>
+<%@page import="com.test.core.*"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
@@ -8,6 +8,7 @@
 	String cp = request.getContextPath();
 %>
 
+<%-- 내 풀이
 <%
 	String[] name = request.getParameterValues("name");
 	String[] tel = request.getParameterValues("tel");
@@ -24,34 +25,27 @@
 	}
 	
 	request.setAttribute("lists", lists);
-	
-	
-	
-	
-	/*
-	request.setAttribute("name", name);
-	request.setAttribute("tel", tel);
-	request.setAttribute("addr", addr);
-	*/
-	
-%>
 
+%> 
+--%>
+
+<%
+	List<MemberDTO> lists= new ArrayList<MemberDTO>();
+	
+	for(int i=1; i<=5; i++)
+	{
+		MemberDTO ob = new MemberDTO(
+				request.getParameter("name"+i), 
+				request.getParameter("tel"+i), 
+				request.getParameter("addr"+i));
+		
+		lists.add(ob);
+	}
+	
+	request.setAttribute("lists", lists);
+
+
+%>
+<!-- 포워딩까지~~!  -->
 <jsp:forward page="MemberList.jsp"></jsp:forward>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>MemberInsert.jsp</title>
-</head>
-<body>
-
-<%-- 
-<div>
-	<c:set var="url" value="MemberList.jsp"></c:set>
-	<c:import url="${url }" var="List"></c:import>
-	<c:out value="${List }" escapeXml="false"></c:out>
-</div>
- --%>
-</body>
-</html>

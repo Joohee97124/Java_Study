@@ -31,16 +31,25 @@
 				<th>이름</th>
 				<td>
 					<!-- 
-					<input type="text" name="name">
-					<input type="text" name="name">
-					<input type="text" name="name">
-					<input type="text" name="name">
-					<input type="text" name="name"> 
+					<input type="text" name="name1">
+					<input type="text" name="name2">
+					<input type="text" name="name3">
+					<input type="text" name="name4">
+					<input type="text" name="name5"> 
 					-->
 					
+					<%-- 내 풀이
 					<c:forEach var="name" begin="1" end="5" step="1">
 						<input type="text" name="name">
+					</c:forEach> 
+					--%>
+					
+					<c:set var="i" value="1"></c:set>
+					<c:forEach var="a" begin="1" end="5" step="1">
+						<input type="text" name="name${i }">
+						<c:set var="i" value="${i+1 }"></c:set>
 					</c:forEach>
+					
 				</td>
 			</tr>
 			
@@ -55,9 +64,18 @@
 					<input type="text" name="tel"> 
 					-->
 					
+					<%-- 내 풀이
 					<c:forEach var="tel" begin="1" end="5" step="1">
 						<input type="text" name="tel">
 					</c:forEach>
+					--%>
+					
+					<c:set var="i" value="1"></c:set>
+					<c:forEach var="a" begin="1" end="5" step="1">
+						<input type="text" name="tel${i }">
+						<c:set var="i" value="${i+1 }"></c:set>
+					</c:forEach>
+					
 				</td>
 			</tr>
 			
@@ -72,9 +90,18 @@
 					<input type="text" name="addr"> 
 					-->
 					
+					<%-- 내 풀이
 					<c:forEach var="addr" begin="1" end="5" step="1">
 						<input type="text" name="addr">
 					</c:forEach>
+					--%>
+					
+					<c:set var="i" value="1"></c:set>
+					<c:forEach var="a" begin="1" end="5" step="1">
+						<input type="text" name="addr${i }">
+						<c:set var="i" value="${i+1 }"></c:set>
+					</c:forEach>
+					
 				</td>
 			</tr>
 			

@@ -34,9 +34,11 @@
 			<th>주소</th>
 		<tr>
 		
+		<!-- dto들이 들어있는 자료구조 받아오기 → items 잊지말기! -->
 		<c:forEach var="dto" items="${lists }" >
 		<tr>
 			<td>${dto.name }</td>
+			<!-- 프로퍼티에 접근하면 getter 알아서 호출해줌~!! -->
 			<td>${dto.tel }</td>
 			<td>${dto.addr }</td>
 		</tr>
