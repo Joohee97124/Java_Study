@@ -4,12 +4,12 @@
 	/* 
 	String strSu1 = request.getParameter("su1");
 	int su1 = Integer.parseInt(strSu1); 
-	*/	
+	*/
 %>
 
 
 <%
-/* 	
+	/* 	
 // Calc.jsp 페이지로부터 데이터 수신
 	String strSu1 = request.getParameter("su1");
 	String strSu2 = request.getParameter("su2");
@@ -43,7 +43,6 @@
 		
 	}
 */
-
 %> 
 
 

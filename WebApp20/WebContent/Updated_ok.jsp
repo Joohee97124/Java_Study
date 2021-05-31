@@ -4,8 +4,8 @@
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%
-   request.setCharacterEncoding("UTF-8");
-   String cp = request.getContextPath();    
+	request.setCharacterEncoding("UTF-8");
+   String cp = request.getContextPath();
 %>
 
 <jsp:useBean id="dto" class="com.test.BoardDTO" scope="page"></jsp:useBean>

@@ -8,18 +8,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MVCSample.jsp</title>
+<title>MVCBegin.jsp</title>
 </head>
 <body>
 	
 <div>
-	<h1>MVC 실습1</h1>
+	<h1>MVC 실습 2</h1>
 	<hr>
 </div>
 
 <div>
-	<!-- 보여줄거 -->
-	${message }
+	<!-- 컨트롤러로부터 수신한 결과 -->
+	<ul>
+		<c:forEach var="i" items="${lists }">
+			<li>${i }</li>
+		</c:forEach>
+	</ul>
+	<%-- ${lists } 이렇게는 보여지지 않는다! --%>
 </div>
 	
 </body>
