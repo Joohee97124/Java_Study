@@ -24,7 +24,7 @@ public class MVCSample02Model
 		for(int i=1; i<=100; i++)
 			lists.add(String.valueOf(i));
 		
-		request.setAttribute("list", lists);
+		request.setAttribute("lists", lists);
 		
 		result = "WEB-INF/view/MVCSample02.jsp";
 		

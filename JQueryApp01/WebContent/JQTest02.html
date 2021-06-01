@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02.html</title>
+
+<style type="text/css">
+	.item
+	{
+		border: solid 2px red;
+		color : white;
+		background: black;
+	}
+</style>
+
+<!-- 얘는 가~~장 위에 존재해야 함! -->
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+	
+	/* 
+	function test()
+	{
+		alert("함수 호출 확인~!!");
+	} 
+	*/
+	
+	
+	// 제이쿼리 함수
+	// jquery(document).ready();
+	// $(document).ready();
+	// jquery();
+	// $();
+	
+	// $(document).ready(기능 삽입 / 동작 수행 / 행위 처리);
+	// 문서가 준비되면 무조건 이 함수 호출 
+	
+	$(document).ready(function()
+	{
+		// 테스트
+		// alert("기능 확인");
+		
+		// ※ 우리가.. 또는 사용자가...
+		//	  뭔가 건드리지 않아도...
+		//	  (즉, 특별한 이벤트를 발생시키지 않아도...)
+		//	  자동으로 처리될 수 있는 영역
+		
+		
+		/* 
+		// h1을 붙잡아 올 수 있다 (+ 클릭되었을 때 함수 호출)
+		$("h1").click(function()
+		{
+			// alert("클릭되었능데요...");
+			// alert( $(this).html() );
+			// $(this).html("어떻게 될까요?");
+			$(this).html( $(this).html + "★");
+			
+		}) 
+		*/
+		
+		
+		// 『on()』 : 이벤트 처리
+		/*
+		$("h1").on("click", function()	// click 이벤트 처리
+		{
+			// alert("클릭 이벤트 발생");
+			alert( $(this).html() );
+		});
+		*/
+		
+		
+		/* // one : 동일한 이벤트에 대해 한번만 처리
+		$("h1").one("click", function()
+		{
+			// alert("클릭~!!!");
+			// alert($(this).html() );
+			
+			$(this).html(function(index, html)
+			{
+				// alert(html);
+				// alert(index);
+				return html + "★";
+			}); 
+		});
+		*/
+		
+		
+		/* 
+		$("h1").on(
+		{	// mouseenter : 어찌어찌하겠다 → 마우스 진입할 때...
+			// mouseleave : 어찌어찌하겠다 → 마우스 빠져나올 때...
+			mouseenter:function() {$(this).addClass("item")}
+			, mouseleave:function() {$(this).removeClass("item") }
+		}); 
+		*/
+		
+		
+		// mouseenter, mouseleave
+		$("h1").hover(function()
+		{
+			$(this).addClass("item");
+		}, function()
+		{
+			$(this).removeClass("item");
+		});
+		
+		
+		
+	});
+	
+	
+</script>
+
+
+</head>
+<body>
+
+<!-- <h1 onclick="함수()">박정준</h1> -->
+<!-- <h1 onclick="test()">박정준</h1> : 정준 이름 클릭 시 호출-->
+
+<h1>박정준</h1>
+<h1>심혜진</h1>
+<h1>선혜연</h1>
+
+</body>
+</html>
