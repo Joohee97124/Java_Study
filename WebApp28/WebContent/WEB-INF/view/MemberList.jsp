@@ -34,7 +34,7 @@
 
 <div>
 	<form action="memberinsertform" method="post">
-	<button type="button">등록하기</button>
+	<button type="submit">등록하기</button>
 	</form>
 </div>
 

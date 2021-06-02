@@ -22,7 +22,7 @@
 
 <div>
 	<form action="memberinsert" method="post">
-	<table >
+	<table class="table" >
 		<tr>
 			<td>
 				ID : <input type="text" name="id">
@@ -55,7 +55,7 @@
 		
 		<tr>
 			<td>
-				<button type="button">submit</button>
+				<button type="submit">전송하기</button>
 			</td>
 		</tr>
 	

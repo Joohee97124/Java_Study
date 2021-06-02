@@ -50,4 +50,15 @@
 		<url-pattern>/memberinsertform</url-pattern>
 	</servlet-mapping>
 	
+	<!--  MemberInsert --> 
+	<servlet>
+		<servlet-name>MemberInsert</servlet-name>
+		<servlet-class>com.test.mvc.MemberInsertController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>MemberInsert</servlet-name>
+		<url-pattern>/memberinsert</url-pattern>
+	</servlet-mapping>
+	
 </web-app>
