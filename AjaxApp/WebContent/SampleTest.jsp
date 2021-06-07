@@ -4,8 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>SampleTest.jsp</title>
-<link rel="stylesheet" type="text/css" href="css/default.css"> 
-
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
@@ -19,7 +18,6 @@
 	<form>
 	</form>
 </div>
-
 
 </body>
 </html>
