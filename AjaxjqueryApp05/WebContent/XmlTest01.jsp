@@ -15,7 +15,7 @@
 <script type="text/javascript">
 	
 	$(function()
-	{4t
+	{
 		$("#sendBtn").click(function()
 		{
 			var params = "name=" + $.trim($("#name").val())
