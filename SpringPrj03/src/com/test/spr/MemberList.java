@@ -10,7 +10,7 @@ package com.test.spr;
 public class MemberList
 {
 	// 처음 연결하는 클래스 정보
-	/*
+	
 	private OracleDAO dao;
 	
 	public MemberList()
@@ -19,14 +19,14 @@ public class MemberList
 		dao = new OracleDAO();
 
 	}
-	*/
+	
 	
 	//※ 현재의 방법은
 	//	 환경 변화에 대해서 소스 코드 자체를 수정하지 않고는
 	//	 적응하지 못하는 단점이 있다.
 	
 	// 두번째 연결하는 클래스 정보
-	
+	/*
 	private MssqlDAO dao;
 	
 	public MemberList()
@@ -35,6 +35,7 @@ public class MemberList
 		dao = new MssqlDAO();
 
 	}
+	*/
 		
 	
 	

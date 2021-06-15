@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- ※ 스프링이 제공하는 환경 설정 XML 파일 샘플 -->
+	<!-- → 스프링이 생성하고 관리해야 할 객체들에 대한 정보 전달 -->
+	
+	<!-- CalculatorImpl 클래스의 객체 생성 ( 정미 ) 을 위한 정보 전달  -->
+	<bean id="cal" class="com.test.spr.CalculatorImpl"></bean>	
+	
+	
+	<!-- CalculatorAspect 클래스의 객체 생성 ( 가영 )을 위한 정보 전달 -->
+	<bean id="aspect" class="com.test.spr.CalculatorAspect"></bean>
+	
+	<!-- CalculatorBeforeAdvice 클래스의 객체 생성을 위한 정보 전달 -->
+	<bean id="before" class="com.test.spr.CalculatorBeforeAdvice"></bean>
+	
+		
+	
+	<!-- check~!!!!  -->
+	<!-- 이제 프록시는 우리가 만드는게 아니라
+		스프링에서 proxy를 만든다!설계도도 스프링이 가지고 있음,,   -->
+	<!-- 스프링안에는『ProxyFactoryBean 』가 있다. = Bean을 만드는 팩토리  => 프록시를 만드는 팩토리
+	『ProxyFactoryBean』 어딨는지 경로를 알 필요는 없음.. 프록시 설계도 이름이라는 것만 알아두길  -->
+
+	<!-- 스프링이 제공하는 가짜 객체(Proxy) 클래스의 객체 생성을 위한 정보 전달 -->
+	<!-- 『ProxyFactoryBean』 -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+	
+	<!-- 여기서 프로퍼티는 프록시팩토리빈이 가진 속성.. 즉 변수 -->
+      <!-- 변수에 직접 접근은 불가. 접근 불가 때문에 노출이 안돼있으므로 -->
+      <!-- 접근 못하는 건 스프링도 마찬가지. 즉 스프링이 getter setter 마련을 해놨을 것. -->
+	
+	
+		<!-- 주 업무 클래스의 인터페이스 정보 제공 -->
+		<!-- → 『proxyInterfaces』 -->
+		<property name="proxyInterfaces">
+			<list>				<!-- 복수형의 프로퍼티를 넘길 때는 list 엘리먼트를 써야함 -->
+				<value>com.test.spr.Calculator</value>
+				<!-- interfaces → 정미패밀리 -->
+				<!-- <value>com.test.spr.Calculator2</value> 
+					이렇게 복수개를 쓰면 된다 -->
+			</list>
+		</property>
+		
+		<!-- 주 업무 클래스의 객체 정보 제공 -->
+		<!-- 『target』 -->
+		<property name="target" ref="cal">
+		</property>
+		
+		<!-- 보조 업무 클래스의 객체 정보 제공 -->
+		<!-- 『interceptorNames』  -->
+		<property name="interceptorNames">
+			<list>
+				<!-- Around Advice  -->
+				<value>aspect</value>
+				<!-- 가영이 -->
+				
+				<!-- Before Advice : 추가된 보조 업무 -->
+				<value>before</value>
+			</list>
+		</property>
+	
+		
+	</bean>
+	
+</beans>
