@@ -4,4 +4,15 @@
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
 <fullyQualifiedTypeName name="sun.rmi.server.Dispatcher"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.DispatcherServlet"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="com.test.mvc.IEmployeeDAO"/>
+<fullyQualifiedTypeName name="com.test.mvc.Region"/>
+<fullyQualifiedTypeName name="com.test.mvc.Department"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.test.mvc.Position"/>
+<fullyQualifiedTypeName name="com.test.mvc.Employee"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
 </qualifiedTypeNameHistroy>

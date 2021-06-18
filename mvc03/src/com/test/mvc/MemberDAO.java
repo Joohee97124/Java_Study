@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import javax.sql.DataSource;
 
 
-
+//MemberDAO 는 dataSource 에 의존성이 있다.
 public class MemberDAO implements IMemberDAO
 {
 	// ※ Connection 객체에 대한 의존성 주입을 위한 준비
@@ -25,6 +25,7 @@ public class MemberDAO implements IMemberDAO
 	// 구멍을 뚫어놓고
 	
 	// ② setter 구성
+	// 스프링 컨테이너가 DataSource 를 주입할 수 있는 setter 메소드
 	public void setDataSource(DataSource dataSource)
 	{
 		this.dataSource = dataSource;

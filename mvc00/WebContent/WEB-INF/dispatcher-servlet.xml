@@ -16,9 +16,5 @@
 	<!-- 이 과정에서 Front Controller 가 갖고 있는 확장자의 형태로 구성한다  -->
 	<!-- 『class=""』 속성은 Controller 객체의 클래스 경로 및 이름을 등록한다 -->
 	
-	
-	<bean name="/hi.action" class="com.test.mvc.HelloController"></bean>
-	<bean name="/hello.action" class="com.test.mvc.HelloController"></bean>
-	<bean name="/bye.action" class="com.test.mvc.HelloController"></bean>
 
 </beans>
