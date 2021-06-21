@@ -31,58 +31,60 @@ public class EmployeeDAO implements IEmployeeDAO
 	
 	// 인터페이스에서 선언된 메소드 재정의 ---------------------------------
 
-	// 직원 전체 리스트 출력
-	@Override
-	public ArrayList<Employee> lists() throws SQLException
-	{
-		ArrayList<Employee> result = new ArrayList<Employee>();
-		
-		Connection conn = datasource.getConnection();
-		
-		String sql = "SELECT EMPLOYEEID, NAME, SSN, BIRTHDAY"
-				+ ", LUNAR, LUNARNAME, TELEPHONE"
-				+ ", DEPARTMENTID, DEPARTMENTNAME"
-				+ ", POSITIONID, POSITIONNAME"
-				+ ", REGIONID, REGIONNAME"
-				+ ", BASICPAY, EXTRAPAY"
-				+ ", GRADE FROM EMPLOYEEVIEW "
-				+ " ORDER BY EMPLOYEEID";
-		
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		ResultSet rs = pstmt.executeQuery();
-		
-		while(rs.next())
-		{
-			Employee employee = new Employee();
-			
-			employee.setEmployeeId(rs.getString("EMPLOYEEID"));
-			employee.setName(rs.getString("NAME"));
-			employee.setSsn(rs.getString("SSN"));
-			employee.setBirthday(rs.getString("BIRTHDAY"));
-			employee.setLunar(rs.getInt("LUNAR"));
-			employee.setLunarName(rs.getString("LUNARNAME"));
-			employee.setTelephone(rs.getString("TELEPHONE"));
-			employee.setDepartmentId(rs.getString("DEPARTMENTID"));
-			employee.setDepartmentName(rs.getString("DEPARTMENTNAME"));
-			employee.setPositionId(rs.getString("POSITIONID"));
-			employee.setPositionName(rs.getString("POSITIONNAME"));
-			employee.setRegionId(rs.getString("REGIONID"));
-			employee.setRegionName(rs.getString("REGIONNAME"));
-			employee.setBasicPay(rs.getInt("BASICPAY"));
-			employee.setExtraPay(rs.getInt("EXTRAPAY"));
-			employee.setPay(rs.getInt("PAY"));
-			employee.setGrade(rs.getInt("GRADE"));
-			
-			result.add(employee);
-			
-		}
-		
-		rs.close();
-		pstmt.close();
-		conn.close();
-		
-		return result;
-	}
+	   @Override
+	   public ArrayList<Employee> lists() throws SQLException
+	   {
+	      ArrayList<Employee> result = new ArrayList<Employee>();
+
+	      Connection conn = datasource.getConnection();
+	      
+	      String sql = "SELECT EMPLOYEEID, NAME, SSN, BIRTHDAY"
+	               + ", LUNAR, LUNARNAME, TELEPHONE"
+	               + ", DEPARTMENTID, DEPARTMENTNAME"
+	               + ", POSITIONID, POSITIONNAME"
+	               + ", REGIONID, REGIONNAME"
+	               + ", BASICPAY, EXTRAPAY, PAY, GRADE"
+	               + " FROM EMPLOYEEVIEW"
+	               + " ORDER BY EMPLOYEEID";
+	   
+	      
+	      PreparedStatement pstmt = conn.prepareStatement(sql);
+	      
+	      ResultSet rs = pstmt.executeQuery();
+	      
+	      while(rs.next())
+	      {
+	         Employee employee = new Employee();
+	         
+	         employee.setEmployeeId(rs.getString("EMPLOYEEID"));
+	         employee.setName(rs.getString("NAME"));
+	         employee.setSsn(rs.getString("SSN"));
+	         employee.setBirthday(rs.getString("BIRTHDAY"));
+	         employee.setLunar(rs.getInt("LUNAR"));
+	         employee.setLunarName(rs.getString("LUNARNAME"));
+	         employee.setTelephone(rs.getString("TELEPHONE"));
+	         employee.setDepartmentId(rs.getString("DEPARTMENTID"));
+	         employee.setDepartmentName(rs.getString("DEPARTMENTNAME"));
+	         employee.setPositionId(rs.getString("POSITIONID"));
+	         employee.setPositionName(rs.getString("POSITIONNAME"));
+	         employee.setRegionId(rs.getString("REGIONID"));
+	         employee.setRegionName(rs.getString("REGIONNAME"));
+	         employee.setBasicPay(rs.getInt("BASICPAY"));
+	         employee.setExtraPay(rs.getInt("EXTRAPAY"));
+	         employee.setPay(rs.getInt("PAY"));
+	         employee.setGrade(rs.getInt("GRADE"));
+
+	         result.add(employee);
+	      }
+	      rs.close();
+	      pstmt.close();
+	      conn.close();
+	      
+	      
+	      return result;
+	      
+	   }
+
 
 	
 	// 지역 리스트 출력 

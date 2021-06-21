@@ -19,6 +19,7 @@ public class Position
 	public String getPositionId()
 	{
 		return positionId;
+
 	}
 	public void setPositionId(String positionId)
 	{
