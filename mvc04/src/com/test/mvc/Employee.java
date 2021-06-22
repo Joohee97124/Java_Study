@@ -1,7 +1,7 @@
-/*========================
- * #01. Employee.java
- * - 직원 데이터 자료형 클래스
- =======================*/
+/*============================
+   #01. Employee.java
+   - 직원 데이터 자료형 클래스
+============================*/
 
 package com.test.mvc;
 
@@ -9,19 +9,18 @@ public class Employee
 {
 	// 주요 속성 구성
 	//-- 사원번호, 사원명, 주민번호, 생년월일, 양음력
-	// 전화번호, 부서아이디, 부서명, 직위아이디, 직위명, 지역아이디, 지역명
-	
+	//   전화번호, 부서아이디, 부서명, 직위아이디, 직위명, 지역아이디, 지역명 
 	private String employeeId, name, ssn, birthday, lunarName
 	, telephone, departmentId, departmentName
 	, positionId, positionName, regionId, regionName;
 	
-	private int lunar;		// 양력0 음력1
-	public int basicPay, extraPay, pay;
+	private int lunar;			// 양력0, 음력1
+	private int basicPay, extraPay, pay;
 	
-	private String ssn1, ssn2;		// 주민번호 앞자리, 뒷자리
-	private int grade;				// 관리자0 일반직원1
+	private String ssn1, ssn2;	// 주민번호 앞자리, 뒷자리 
+	private int grade;			// 관리자0, 일반직원1
 	
-	// getter / setter 구성
+	// gettter / setter 구성
 	public String getEmployeeId()
 	{
 		return employeeId;
@@ -174,7 +173,6 @@ public class Employee
 	{
 		this.grade = grade;
 	}
-		
 	
 	
 }

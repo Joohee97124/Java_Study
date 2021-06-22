@@ -1,7 +1,8 @@
-/*===========================
- * #06. IDepartmentDAO.java
- * - 인터페이스
+/*============================
+   #06. IDepartmentDAO.java
+   - 인터페이스
 ============================*/
+
 package com.test.mvc;
 
 import java.sql.SQLException;
@@ -14,7 +15,4 @@ public interface IDepartmentDAO
 	public int add(Department department) throws SQLException;
 	public int remove(String departmentId) throws SQLException;
 	public int modify(Department department) throws SQLException;
-	
-	
-	
 }
