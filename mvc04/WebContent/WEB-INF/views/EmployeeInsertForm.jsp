@@ -27,7 +27,7 @@
 		{
 			// 날짜 형식 지정
 			dateFormat: "yy-mm-dd"
-			// 년도, 월 지정
+			// 년도, 월 (이동 가능) 지정
 			, changeMonth: true
 			, changeYear: true
 		});
@@ -46,8 +46,8 @@
 		$("#submitBtn").click(function()
 		{
 			// 데이터 검사(공란이 있는지 없는 지에 대한 여부 확인)
-			if($("#name").val=="" || $("#ssn1").val=="" || $("#ssn2").val=="" 
-				|| $("#birthday").val=="" || $("#telephone").val=="" || $("#basicPay").val() == "")
+			if($("#name").val()=="" || $("#ssn1").val()=="" || $("#ssn2").val()=="" 
+				|| $("#birthday").val()=="" || $("#telephone").val()=="" || $("#basicPay").val() == "")
 			{
 				$("#err").html("필수 입력 항목이 누락되었습니다.");
 				$("#err").css("display", "inline");
@@ -94,6 +94,7 @@
 		{
 			$("#minBasicPay").html(data);	
 		});
+		// positionId 라는 데이터를 보내면 minBasicPay(=data) 라는 데이터를 내놔~!라는 의미
 	}
 
 </script>

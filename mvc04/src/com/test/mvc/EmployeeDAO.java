@@ -310,52 +310,46 @@ public class EmployeeDAO implements IEmployeeDAO
    }
 
    // 직원 검색
-   @Override
-   public Employee searchId(String employeeId) throws SQLException
-   {
-      Employee result = new Employee();
-      
-      Connection conn = dataSource.getConnection();
-      
-      String sql = "SELECT EMPLOYEEID, NAME, SSN1"
-            + ", TO_CHAR(BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY"
-            + ", LUNAR, TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID"
-            + ", BASICPAY, EXTRAPAY"
-            + " FROM EMPLOYEE"
-            + " WHERE EMPLOYEEID = ?";
-      
-      PreparedStatement pstmt = conn.prepareStatement(sql);
-      pstmt.setString(1, employeeId);
-      ResultSet rs = pstmt.executeQuery();
-      
-      if(rs.next())
-      {
-         result.setEmployeeId(rs.getString("EMPLOYEEID"));
-         result.setName(rs.getString("NAME"));
-         result.setSsn(rs.getString("SSN"));
-         result.setBirthday(rs.getString("BIRTHDAY"));
-         result.setLunar(rs.getInt("LUNAR"));
-         result.setLunarName(rs.getString("LUNARNAME"));
-         result.setTelephone(rs.getString("TELEPHONE"));
-         result.setDepartmentId(rs.getString("DEPARTMENTID"));
-         result.setDepartmentName(rs.getString("DEPARTMENTNAME"));
-         result.setPositionId(rs.getString("POSITIOID"));
-         result.setPositionName(rs.getString("POSITIONNAME"));
-         result.setRegionId(rs.getString("REGIONID"));
-         result.setRegionName(rs.getString("REGIONNAME"));
-         result.setBasicPay(rs.getInt("BASICPAY"));
-         result.setExtraPay(rs.getInt("EXTRAPAY"));
-         result.setPay(rs.getInt("PAY"));
-         result.setGrade(rs.getInt("GRADE"));
-      }
-      
-      rs.close();
-      pstmt.close();
-      conn.close();
-      
-      return result;
-   }
-
+	@Override
+	public Employee searchId(String employeeId) throws SQLException
+	{
+		Employee result = new Employee();
+		
+		Connection conn = dataSource.getConnection();
+		
+		String sql = "SELECT EMPLOYEEID, NAME, SSN1"
+				+ ", TO_CHAR(BIRTHDAY, 'YYYY-MM-DD') AS BIRTHDAY"
+				+ ", LUNAR, TELEPHONE, DEPARTMENTID, POSITIONID, REGIONID"
+				+ ", BASICPAY, EXTRAPAY"
+				+ " FROM EMPLOYEE"
+				+ " WHERE EMPLOYEEID = ?";
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, employeeId);
+		ResultSet rs = pstmt.executeQuery();
+		
+		if(rs.next())
+		{
+			result.setEmployeeId(rs.getString("EMPLOYEEID"));
+			result.setName(rs.getString("NAME"));
+			result.setSsn1(rs.getString("SSN1"));
+			result.setBirthday(rs.getString("BIRTHDAY"));
+			result.setLunar(rs.getInt("LUNAR"));
+			result.setTelephone(rs.getString("TELEPHONE"));
+			result.setDepartmentId(rs.getString("DEPARTMENTID"));
+			result.setPositionId(rs.getString("POSITIONID"));
+			result.setRegionId(rs.getString("REGIONID"));
+			result.setBasicPay(rs.getInt("BASICPAY"));
+			result.setExtraPay(rs.getInt("EXTRAPAY"));
+		}
+		
+		rs.close();
+		pstmt.close();
+		conn.close();
+		
+		return result;
+	}
+	
    // 일반 사원 로그인
    @Override
    public String login(String id, String pw) throws SQLException

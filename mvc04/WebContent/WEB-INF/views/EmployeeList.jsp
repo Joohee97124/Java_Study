@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+d<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
@@ -12,6 +12,47 @@
 <meta charset="UTF-8">
 <title>EmployeeList.jsp</title>
 <link rel="stylesheet" type="text/css" href="<%=cp %>/css/main.css">
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function()
+	{
+		$(".updateBtn").click(function()
+		{
+			// 테스트
+			// alert("수정 버튼 클릭");
+			
+			// employeeupdateform.action?name=한혜림&ssn1=&ssn2
+			// 이렇게 다 받아올 필요 없이 Id를 받아와서 list로 페이지(뷰)에서 보여주면 된다
+			
+			// employeeupdateform.action 페이지 요청
+			// employeeId 전송
+			// dao.searchId 로 ID를 통해 해당하는 데이터들을 뷰페이지로 넘김
+			
+			$(location).attr("href", "employeeupdateform.action?employeeId=" + $(this).val() );
+			// this → $(".updateBtn")
+			
+			
+			
+			
+			
+		});
+		
+		$(".deleteBtn").click(function()
+		{
+			// 테스트
+			// alert("삭제 버튼 클릭");
+			
+			if (confirm("현재 선택한 데이터를 정말 삭제하시겠습니까?"))
+			{
+				$(location).attr("href", "employeedelete.action?employeeId=" + $(this).val() );
+			}
+			
+		});
+	});
+</script>
+
+
 </head>
 <body>
 
@@ -99,8 +140,10 @@
 						${employee.grade==0? "관리자" : "일반직원" }
 					</td>
 					
-					<td><button type="button" class="btn">수정</button></td>
-					<td><button type="button" class="btn">삭제</button></td>
+					<td><button type="button" class="btn updateBtn"
+					value="${employee.employeeId }">수정</button></td>
+					<td><button type="button" class="btn deleteBtn"
+					value="${employee.employeeId }">삭제</button></td>
 				</tr>
 			</c:forEach>
 			<!-- 

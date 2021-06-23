@@ -329,28 +329,39 @@ http://localhost:8090/mvc03/memberlist.action
 						   의존객체 주입 설정
 						   DAO 객체 등록
 
-   #30(17). EmployeeListController.java 		
+   #17. EmployeeListController.java 		
             (employeelist.action)
 
 
-   #15(18). EmployeeInsertForm.jsp 		→ 직원 데이터 입력 폼 페이지
+   #18. EmployeeInsertForm.jsp 		→ 직원 데이터 입력 폼 페이지
 						   AJAX, jQuery 기능 포함
 
-   #31(19). EmployeeInsertFormController.java 		
+   #19. EmployeeInsertFormController.java 		
             (employeeinsertform.action)
 
 	     직원 추가 > 폼의 데이터 체크 > employeeinsert.action 
 
-
-   #32(20). AjaxController.java
+   #20. AjaxController.java
 	    (ajax.action)
 
-   #33(21). EmployeeInsertController.java 		
+   #21. Ajax.jsp				→ AJAX 객체 구성 페이지
+
+   #22. EmployeeInsertController.java 		
             (employeeinsert.action) 
 
 
-   #16. EmployeeUpdateForm.jsp			→ 직원 데이터 수정 폼 페이지
+   #16(23). EmployeeUpdateForm.jsp			→ 직원 데이터 수정 폼 페이지
 						   AJAX, jQuery 기능 포함 
+
+   #34(24). EmployeeUpdateFormController.java 		
+            (employeeupdateform.action) 
+
+   #35(25). EmployeeUpdateController.java 		
+            (employeeupdate.action)
+
+   #36(26). EmployeeDeleteController.java 		
+            (employeedelete.action) 
+ 
 
    #17. DepartmentList.jsp 			→ 부서 리스트 출력 페이지
 
@@ -383,17 +394,7 @@ http://localhost:8090/mvc03/memberlist.action
     
 
    #32. AjaxController.java
-	 (ajax.action)
-
-
-   #34. EmployeeUpdateFormController.java 		
-         (employeeupdateform.action) 
-
-   #35. EmployeeUpdateController.java 		
-         (employeeupdate.action) 
-
-   #36. EmployeeDeleteController.java 		
-         (employeedelete.action) 
+	 (ajax.action) 
 
    #37. DepartmentListController.java 	
    #38. DepartmentInsertFormController.java 		
