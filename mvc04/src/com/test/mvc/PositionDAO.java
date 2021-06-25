@@ -103,8 +103,7 @@ public class PositionDAO implements IPositionDAO
 		return result;
 	}
 	
-
-	// 직위 데이터 수정
+	   // 직위 데이터 수정
 	   @Override
 	   public int modify(Position position) throws SQLException
 	   {
@@ -127,5 +126,35 @@ public class PositionDAO implements IPositionDAO
 	      
 	      return result;
 	   }
+	   
+		// 직위 검색
+		@Override
+		public Position searchId(String positionId) throws SQLException
+		{
+			Position result = new Position();
+				
+			Connection conn = dataSource.getConnection();
+				
+			String sql = "SELECT POSITIONID, POSITIONNAME, MINBASICPAY, DELCHECK FROM POSITIONVIEW WHERE POSITIONID=?";
+			// 뷰
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(positionId));
+			ResultSet rs = pstmt.executeQuery();
+				
+			if(rs.next())
+			{
+				result.setPositionId(rs.getString("POSITIONID"));
+				result.setPositionName(rs.getString("POSITIONNAME"));
+				result.setDelCheck(rs.getInt("DELCHECK"));
+				
+			}
+				
+			rs.close();
+			pstmt.close();
+			conn.close();
+				
+			return result;
+		}
 
 }

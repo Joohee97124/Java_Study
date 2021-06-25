@@ -1,20 +1,21 @@
-/*=================================
-  #21. EmployeeInsertController.java
-  	(employeensert.action)
+/*===================================================
+   #21. EmployeeInsertController.java
+    (employeeinsert.action)
    - 사용자 정의 컨트롤러 클래스
-   - 직원 데이터 입력 액션 수행 후 employeelist.action 다시 요청할 수 있도록 안내
-    - DAO 객체에 대한 의존성 주입(DI)을 위한 준비
+   - 직원 데이터 입력 액션 수행 후 
+     employeelist.action다시 요청할 수 있도록 안내
+   - DAO 객체에 대한 의존성 주입(DI)을 위한 준비
      → 인터페이스 형태의 자료형을 속성으로 구성
      → setter 메소드 구성
-=================================*/
+====================================================*/
 
 package com.test.mvc;
 
-import java.util.ArrayList;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.filters.AddDefaultCharsetFilter;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -34,12 +35,29 @@ public class EmployeeInsertController implements Controller
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		// 액션 코드
-		
 		ModelAndView mav = new ModelAndView();
 		
-		// 직원 list 데이터 받아오기 (데이터 수신 → EmployeeInsertForm.jsp 로부터...)
-	      
-	    String name = request.getParameter("name");
+		// 세션 처리과정 추가 ----------------------------------------------------
+		HttpSession session = request.getSession();
+		
+		if (session.getAttribute("name")==null)		//-- 로그인이 되어있지 않은 상황
+		{
+			mav.setViewName("redirect:loginform.action");
+			return mav;
+		}
+		else if (session.getAttribute("admin")==null)	//-- 관리자 아닌 일반사원으로 로그인된 상황
+		{
+			mav.setViewName("redirect:logout.action");
+			// 기존의 로그인 풀어주기
+			return mav;
+		}
+		// ---------------------------------------------------- 세션 처리과정 추가 
+				
+		
+		// 데이터 수신 → EmployeeInsertForm.jsp 로 부터
+		request.setCharacterEncoding("UTF-8");
+		
+		String name = request.getParameter("name");
 		String ssn1 = request.getParameter("ssn1");
 		String ssn2 = request.getParameter("ssn2");
 		String birthday = request.getParameter("birthday");
@@ -48,9 +66,9 @@ public class EmployeeInsertController implements Controller
 		String regionId = request.getParameter("regionId");
 		String departmentId = request.getParameter("departmentId");
 		String positionId = request.getParameter("positionId");
-		String basicPay = request.getParameter("basicPay");
-		String extraPay = request.getParameter("extraPay");
-				
+		String basicpay = request.getParameter("basicPay");
+		String extrapay = request.getParameter("extraPay");
+		
 		try
 		{
 			Employee employee = new Employee();
@@ -58,15 +76,14 @@ public class EmployeeInsertController implements Controller
 			employee.setName(name);
 			employee.setSsn1(ssn1);
 			employee.setSsn2(ssn2);
-			
 			employee.setBirthday(birthday);
 			employee.setLunar(Integer.parseInt(lunar));
 			employee.setTelephone(telephone);
 			employee.setRegionId(regionId);
 			employee.setDepartmentId(departmentId);
 			employee.setPositionId(positionId);
-			employee.setBasicPay(Integer.parseInt(basicPay));
-			employee.setExtraPay(Integer.parseInt(extraPay));
+			employee.setBasicPay(Integer.parseInt(basicpay));
+			employee.setExtraPay(Integer.parseInt(extrapay));
 			
 			dao.employeeAdd(employee);
 			
@@ -76,8 +93,7 @@ public class EmployeeInsertController implements Controller
 		} catch (Exception e)
 		{
 			System.out.println(e.toString());
-		}		
-
+		}
 		
 		
 		return mav;

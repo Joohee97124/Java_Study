@@ -93,7 +93,7 @@ public class RegionDAO implements IRegionDAO
 		String sql = "DELETE FROM REGION WHERE REGIONID=?";
 		
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, regionId);
+		pstmt.setInt(1, Integer.parseInt(regionId));
 		result = pstmt.executeUpdate();
 		
 		pstmt.close();
@@ -121,5 +121,36 @@ public class RegionDAO implements IRegionDAO
 		
 		return result;
 	}
+	
+	// 지역 검색
+	@Override
+	public Region searchId(String regionId) throws SQLException
+	{
+		Region result = new Region();
+			
+		Connection conn = dataSource.getConnection();
+			
+		String sql = "SELECT REGIONID, REGIONNAME, DELCHECK FROM REGIONVIEW WHERE REGIONID = ?";
+		// 뷰
+		
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, Integer.parseInt(regionId));
+		ResultSet rs = pstmt.executeQuery();
+			
+		if(rs.next())
+		{
+			result.setRegionId(rs.getString("REGIONID"));
+			result.setRegionName(rs.getString("REGIONNAME"));
+			result.setDelCheck(rs.getInt("DELCHECK"));
+			
+		}
+			
+		rs.close();
+		pstmt.close();
+		conn.close();
+			
+		return result;
+	}
+
 
 }

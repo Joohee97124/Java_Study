@@ -27,7 +27,7 @@
 		{
 			// 날짜 형식 지정
 			dateFormat: "yy-mm-dd"
-			// 년도, 월 (이동 가능) 지정
+			// 년도, 월 지정
 			, changeMonth: true
 			, changeYear: true
 		});
@@ -94,7 +94,6 @@
 		{
 			$("#minBasicPay").html(data);	
 		});
-		// positionId 라는 데이터를 보내면 minBasicPay(=data) 라는 데이터를 내놔~!라는 의미
 	}
 
 </script>

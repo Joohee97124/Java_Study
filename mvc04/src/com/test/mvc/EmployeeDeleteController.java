@@ -1,9 +1,11 @@
 /*=================================
-  #26. EmployeeDeleteController.java
+    EmployeeDeleteController.java
+    (employeedelete.action)
    - 사용자 정의 컨트롤러 클래스
-   - 직원 데이터 삭제 액션 처리 → employeelist.action 다시 요청할 수 있도록 안내
+   - 직원 데이터 삭제 액션 처리 
+     employeelist.action 다시 요청
    - DAO 객체에 대한 의존성 주입(DI)을 위한 준비
-     → 인터페이스 형태의 자료형을 속성으로 구성
+    → 인터페이스 형태의 자료형을 속성으로 구성
      → setter 메소드 구성
 =================================*/
 
@@ -11,6 +13,7 @@ package com.test.mvc;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
@@ -21,22 +24,40 @@ import org.springframework.web.servlet.mvc.Controller;
 public class EmployeeDeleteController implements Controller
 {
 	private IEmployeeDAO dao;
-
+	
 	public void setDao(IEmployeeDAO dao)
 	{
 		this.dao = dao;
 	}
 
-
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		// 액션 코드
-		
 		ModelAndView mav = new ModelAndView();
 		
-		// 데이터 수신 (→ EmployeeList.jsp 로부터.. employeeId 수신)
 		
+		// 세션 처리에 따른 추가 구성 → 로그인 여부 확인 → 관리자여야 삭제 가능 -------------------
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("name")==null)
+		{
+			// 로그인 못한 상황 → 로그인창으로 가라! 
+			mav.setViewName("redirect:loginform.action");
+			return mav;
+		}
+		else if (session.getAttribute("admin")==null)
+		{
+			// 일반직원 로그인 상황 → 로그인창으로 가라!
+			mav.setViewName("redirect:loginform.action");
+			return mav;
+		}		
+		// ------------------- 세션 처리에 따른 추가 구성 → 로그인 여부 확인 → 관리자여야 삭제 가능 
+		
+		
+		
+		// 관리자로 로그인 된 상황
+		// 데이터 수신(EmployeeList.jsp 로부터 employeeId 수신)
 		String employeeId = request.getParameter("employeeId");
 		
 		try
