@@ -10,11 +10,9 @@
 <fullyQualifiedTypeName name="com.sun.corba.se.impl.orb.PrefixParserAction"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="org.springframework.web.filter.CharacterEncodingFilter"/>
-<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.SimpleDriverDataSource"/>
 <fullyQualifiedTypeName name="javax.sql.DataSource"/>
 <fullyQualifiedTypeName name="com.test.mvc.IEmployeeDAO"/>
 <fullyQualifiedTypeName name="com.test.mvc.Employee"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.test.mvc.IRegionDAO"/>
 <fullyQualifiedTypeName name="javax.print.DocFlavor.READER"/>
 <fullyQualifiedTypeName name="com.test.mvc.Region"/>
@@ -22,11 +20,22 @@
 <fullyQualifiedTypeName name="com.test.mvc.IDepartmentDAO"/>
 <fullyQualifiedTypeName name="com.test.mvc.Department"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.Controller"/>
-<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
 <fullyQualifiedTypeName name="com.test.mvc.PositionDAO"/>
 <fullyQualifiedTypeName name="com.test.mvc.IPositionDAO"/>
 <fullyQualifiedTypeName name="javafx.geometry.Pos"/>
 <fullyQualifiedTypeName name="com.test.mvc.Position"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionFactoryBean"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.datasource.SimpleDriverDataSource"/>
+<fullyQualifiedTypeName name="com.sun.javafx.sg.prism.NGShape.Mode"/>
+<fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+<fullyQualifiedTypeName name="org.mybatis.spring.SqlSessionTemplate"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.test.mybatis.MemberDTO"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.ui.ModelMap"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.test.mybatis.IMemberDAO"/>
 </qualifiedTypeNameHistroy>

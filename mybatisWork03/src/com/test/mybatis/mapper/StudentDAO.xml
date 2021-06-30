@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.mybatis.IStudentDAO">
+
+	<!-- Student 조회 -->
+	<select id="list" resultType="com.test.mybatis.StudentDTO">
+		SELECT SID, NAME, TEL
+		FROM TBL_STUDENT
+	</select>
+	
+	<!-- add() -->
+	<insert id="add" >
+		INSERT INTO TBL_STUDENT(SID, NAME, TEL)
+		VALUES(STUDENTSEQ.NEXTVAL, '정주희', '010-1111-1111');
+	</insert>
+
+</mapper>
