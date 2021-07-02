@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx03.html</title>
+</head>
+<body>
+
+<h1>회원 가입</h1>
+
+<form action="" style="width:500px; margin:20px;">
+	<input type="text">
+	<br>
+	
+	<text-area rows="" cols=""></text-area>
+	<br>
+	
+	<select class="">
+		<option>Test1</option>
+		<option>Test2</option>
+		<option>Test3</option>
+		<option>Test4</option>
+	</select>
+	<br>
+	
+	<input type="checkbox">
+	<br>
+	
+	<input type="text">
+</body>
+</html>

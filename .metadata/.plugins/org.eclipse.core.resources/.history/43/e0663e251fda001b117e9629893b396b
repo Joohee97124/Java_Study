@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx03.html</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<h1>회원 가입</h1>
+
+<form action="" style="width:500px; margin:20px;">
+	
+	<input type="text">
+	<br>
+	
+	<textarea rows="" cols=""></textarea>
+	<br>
+	
+	<select class="">
+		<option>Test1</option>
+		<option>Test2</option>
+		<option>Test3</option>
+		<option>Test4</option>
+	</select>
+	<br>
+	
+	<input type="checkbox">
+	<br>
+	
+	<input type="text">
+	
+</form>
+</body>
+</html>
