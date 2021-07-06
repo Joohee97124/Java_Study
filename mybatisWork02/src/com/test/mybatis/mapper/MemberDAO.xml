@@ -10,8 +10,7 @@
 	<select id="list" resultType="com.test.mybatis.MemberDTO">
 		SELECT MID, NAME, TELEPHONE
 		FROM TBL_MEMBERLIST
-		ORDER
-		BY MID
+		ORDER BY MID
 	</select>
 
 	<!-- count() -->
