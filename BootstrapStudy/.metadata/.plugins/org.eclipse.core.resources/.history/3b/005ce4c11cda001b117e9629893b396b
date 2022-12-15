@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx02.html</title>
+</head>
+<body>
+
+<h1>1. 기본 테이블<small>기본</small></h1>
+
+<!-- table>(tr>td{cell}*4)*10 -->
+<table>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+</body>
+</html>

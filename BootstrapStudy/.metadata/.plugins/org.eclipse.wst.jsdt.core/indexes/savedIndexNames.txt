@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\BootstrapStudy\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1384796430.index
+3314102463.index
+2891684039.index
+3000832955.index
+358430232.index
+1093784709.index
+3276337256.index
