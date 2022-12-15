@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JsonTest04</title>
+<script type="text/javascript">
+	
+	var myJsonObject4 = 
+	{
+		"test" : function()
+		{
+			alert("Method Test~!!!");
+		}
+			
+	}
+
+</script>
+</head>
+<body>
+
+<form>
+	<input type="button" value="click1" onclick="myJsonObject4.test">
+	<!-- X 아무것도 나오지 않는다 -->
+	
+	<input type="button" value="click2" onclick="alert(myJsonObject4.test)">
+	<!-- function()
+		{
+			alert("Method Test~!!!");
+		} 
+	-->
+	<br><br>
+	
+	<input type="button" value="click3" onclick="alert(myJsonObject4.test())">
+	<!-- (myJsonObject4.test()) → my 의 함수 호출 → MethodTest 나온다 -->
+	
+	
+	<!-- 『eval()』 : 변수를 자바스크립트의 함수처럼 사용할 수 있도록 해주는 함수
+					  정적인 문자열을 동적인 코드 형식으로 처리 -->					  
+	<input type="button" value="click4"
+		onclick="eval('a=' + myJsonObject4.test); a();">
+		<!-- myJsonObject4.test)를 a에 담았고, 그 a를 호출해라는 의미~!!! 
+		     MethodTest 나온다 
+		 -->
+	
+</form>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test029.html</title>
+
+<style type="text/css">
+	* {color:#223322; font-family:맑은고딕; font-weight:bold;}
+	.btn {width:100px; height:40px; font-size: 20pt;}
+
+</style>
+
+<script>
+
+	function actionChoice()
+	{
+		// 테스트
+		// alert("성공");
+		
+		var radioObj = document.getElementsByName("radioGroup");
+		// id로 값을 받아오지 않고 name으로 값을 가져오는데, 여기서 name 1개로 여러개 선택사항들이 있기 때문에 
+		// Elements s를 붙인다
+		// radioObj는 자바스크립트 배열 형태
+		
+		// alert(radioObj);			//--==>> [object NodeList] → 자바스크립트 배열
+		// alert(radioObj.length);		//--==>> 6
+		
+		var msg = "선택된 항목이 없습니다";
+		
+		for (var i=0; i<radioObj.length; i++)	// 0 1 2 3 4 5
+		{
+			// alert(radioObj[i].checked);
+			// checked속성 : 체크되어있는 것은 t, 체크 안된애는 f (배열을 돌면서 =6번)
+			
+			if (radioObj[i].checked)
+			{
+				// alert(radioObj[i].value);
+				msg = "당신이 선택한 사이즈는 아이스크림 종류를 " + radioObj[i].value + "개 고를 수 있습니다";
+				break;
+			}
+
+		}
+		
+		alert(msg);
+		
+		
+		
+		
+	}
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>라디오버튼, 체크박스 다루기</h2>
+	<form>
+		-- 사이즈 선택 -- <br><br>
+		<input type="radio" id="a" value="1" name = "radioGroup"><label for="a">싱글(1)</label><br>
+		<input type="radio" id="b" value="2" name = "radioGroup"><label for="b">더블(2)</label><br>
+		<input type="radio" id="c" value="3" name = "radioGroup"><label for="c"ㅠ>파인트(3)</label><br>
+		<input type="radio" id="d" value="4" name = "radioGroup"><label for="d">쿼터(4)</label><br>
+		<input type="radio" id="e" value="6" name = "radioGroup"><label for="e">패밀리(6)</label><br>
+		<input type="radio" id="f" value="8" name = "radioGroup"><label for="f">하프갤런(8)</label><br>
+		<br>
+		<!--  사이즈 선택 질문에 대답들 (1개 선택) -->
+		
+		<button type="button" class="btn" 
+		onclick="actionChoice()">확인</button>
+	</form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test034.html</title>
+
+<style type="text/css">
+   a {font-size: small; }
+</style>
+
+<script type="text/javascript">
+   
+   function myAddr(addr)
+   {
+      // alert("성공");
+      
+      window.opener.document.getElementById("addr1").value = addr;
+      // Test033의 window를 가리킴 () = Test034를 연 곳
+      // Test033.html Document를 의미  
+      
+      
+      window.close();
+      // 자기창
+      
+   }
+   
+</script>
+
+</head>
+<body>
+
+<div>
+   <form>
+      주소 검색
+      <input>
+      <input type="button" value="검색"><br><br>
+      <!-- <a href="http://www.naver.com">서울 마포구 서교로 1가 (1~110번지)</a><br> -->
+      <a href="javascript:myAddr('서울 마포구 서교로 1가')">서울 마포구 서교로 1가 (1~110번지)</a><br>
+      
+      <a href="javascript:myAddr('서울 마포구 서교로 2가')">서울 마포구 서교로 2가 (111~123번지)</a><br>
+      <a href="javascript:myAddr('서울 마포구 서교로 3가')">서울 마포구 서교로 3가 (124~136번지)</a><br>
+      <a href="javascript:myAddr('서울 마포구 서교로 4가')">서울 마포구 서교로 4가 (137~152번지)</a><br>
+      <a href="javascript:myAddr('서울 마포구 서교로 5가')">서울 마포구 서교로 5가 (153~166번지)</a><br>
+      <a href="javascript:myAddr('서울 마포구 서교로 6가')">서울 마포구 서교로 6가 (167~205번지)</a><br>
+      
+   </form>
+</div>
+
+</body>
+</html>

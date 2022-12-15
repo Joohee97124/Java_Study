@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test012.html</title>
+
+<script type="text/javascript">
+
+	message = "<h1>Hello~!!!</h1>";
+	document.write(message);
+	alert(message);
+	/* alert -> 경고창을 띄우는 함수 */
+	
+</script>
+
+
+
+<script type="text/javascript" src="js/alertTest.js">
+
+/* script는 2개 이상 존재 가능하다 
+메세지를 내부에서 만들고 + 외부에서 또 가져오는 것도 가넝*/
+
+</script>
+
+
+
+<script type="text/javascript">
+
+	// Date 내장 객체 : 현재 시스템의 날짜와 시간
+	// var dt = Date(), toString(); 
+	var dt = String(Date());
+	// 함수-> Date() : 첫글자 대문자 = 객체 => 생성자라고 생각하자~~
+	// String() 함수 : 첫글자 대문자 = 클래스 이름 -> 생성자 (= 클래스이름을 그대로 사용하는 함수,메소드)
+	// Date함수를 String 안에 넣었따 = toString()한거라고 생각해~ 
+	document.write(dt);
+	
+</script>
+
+<!-- 주의할 점 : 중간에 있는 script만 외부에 있는 애를 참조해온거 !   
+
+
+<script type="text/javascript" src="js/alertTest.js">
+
+message = "<h1>Hello~!!!</h1>";
+	document.write(message);
+	alert(message);
+
+</script>
+
+=> 이렇게 되면 안된다!!!!!! 쟤는 오로지 참조한것을 가져와서 적용시킬뿐
+외부와 내부를 따로 설계해야한다! 
+-->
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+</head>
+<body>
+
+<div>
+	<h1>체크박스 만들기</h1>
+	<hr>
+</div>
+
+
+<div>
+	<form>
+		<p> 오늘 점심으로 먹고 싶은 메뉴는?</p>
+		<label>
+			<input type="checkbox" name="foodSet" value="1" checked="checked"> 밥
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="2"> 미역국
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="3"> 콩나물국
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="4"> 김치찌개
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="5"> 계란말이
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="6"> 장조림
+		</label>
+		
+		<label>
+			<input type="checkbox" name="foodSet" value="7"> 동그랑땡
+		</label>
+		
+		
+		<input type="checkbox" name="foodSet" value="8"  id="label8"> 
+		<br> <label for="label8">김</label>
+		
+		
+		<!-- 하나의 질문에 대한 하나의 응답으로 수용 
+		→ name을 하나로 지정해줘야한다!  -->
+		<!-- 실제 체크박스와 '밥'이라는 이름은 상관이 없는 관계!
+		value를 통해 관계를 구해야해 -->
+		<!-- 밥을 체크하면 value=1의 값이 부여되는것  -->
+		<!-- checked="checked" : 미리 선택해놓는 것 -->
+		<!-- label에 감싸놓으면 체크박스가 아닌 글씨를 눌러도 체크가 된다!  -->
+		
+	</form>
+</div>
+
+</body>
+</html>

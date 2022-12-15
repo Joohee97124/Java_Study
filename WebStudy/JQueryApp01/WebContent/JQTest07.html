@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest07.html</title>
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function()
+	{
+		/* 
+		$("#allCheck").change(function()
+		{
+			// 테스트
+			alert("change");
+		}); 
+		*/
+		
+		$("#allCheck").click(function()
+		{
+			// 테스트
+			// alert("click");
+			
+			// 테스트
+			// alert( $(this).attr("checked") );	//-- undefined / undefined
+			// checkbox는 attr로 제어가 불가능하다 는 믜이
+			
+			// alert( $(this).prop("checked") );		//-- 속성 → 설정 true / 해제 false 
+			// alert (this.checked );						//-- 속성 → 설정 true / 해제 false 
+			// alert( $(this).is(":checked") );
+			// is → ~인지 아닌지 확인하여 T/F 반환 (checked 인지 아닌지 확인하여 TF 반환)
+			
+			// 방법 1.
+			// $("div > input:checkbox").prop("checked", this.checked);
+			
+			// 방법 2.
+			// 『$(선택자).children()』 → 선택자를 기준으로 하위 앨리먼트를 모두 선택하는 메소드
+			$("div").children().prop("checked", this.checked);
+			// this -> allCheck박스 의미
+			
+		});
+		
+	});
+
+</script>
+
+</head>
+<body>
+
+<label><input type="checkbox" id="allCheck">모두 선택</label>
+<br><br>
+
+
+<div>
+	<input type="checkbox" id="check1">
+	<label for="check1">바나나</label><br>
+	
+	<input type="checkbox" id="check2">
+	<label for="check2">딸기</label><br>
+	
+	<input type="checkbox" id="check3">
+	<label for="check3">수박</label><br>
+	
+	<input type="checkbox" id="check4">
+	<label for="check4">포도</label><br>
+	
+	<input type="checkbox" id="check5">
+	<label for="check5">키위</label><br>
+
+	
+	
+	
+</div>
+
+</body>
+</html>
