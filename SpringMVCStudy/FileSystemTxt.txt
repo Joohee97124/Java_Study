@@ -1,0 +1,20 @@
+Test1.jsp 	→ 	Test2.jsp	( 우리가 했던 방식 : request.getParameter)
+					- value (O)
+
+Test1.jsp 	→ 	Test2.jsp	( file (X) 전달안됨 )
+
+
+Test1.jsp 	→ 	Test2.jsp	- value(X)
+encType= "multipart/form-data"		- file(X)
+
+
+Test1.jsp	→	Test3.jsp	(객체구성 (속성값 확인) )
+encType= "multipart/form-data"		- 헤더
+					- 데이터
+					- file (X)
+
+
+			『cos.jar』		
+Test1.jsp	→ 	Test4.jsp
+
+		
