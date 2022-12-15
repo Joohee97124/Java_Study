@@ -1,0 +1,9 @@
+지시자	클래스내부	동일패키지	상속받은클래스	이외의영역
+---------------------------------------------------------------------------------------------
+private	O		X		X		X
+default	O		O		X		X
+protected	O		O		O		X
+public 	O		O		O		O
+
+* public > protected > default > private *
+
